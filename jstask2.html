@@ -1,0 +1,81 @@
+<!--Practice array methods-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width,  initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[1,2,'html','css','js'];
+
+        //Accessing elements
+        console.log(a[0]);
+        console.log(a[3]);
+
+        //Modifying elements
+        a[2]='HTML';
+        a[3]='CSS';
+        a[4]='JS';
+        console.log(a);
+
+        //length of array
+        console.log(a.length);
+
+        //concatenation of arrays
+        let a1=[1,2,3];
+        let a2=['a','b','c']
+        console.log(a1.concat(a2));
+        console.log(a2.concat(a1));
+
+        //splice(startindex,deletecount,addeditems)
+        let n=[1,2,3,4,5];
+        n.splice(2,0,'a','b');  
+        console.log(n);
+
+        //slice(startindex,lastindex)
+        let m=[1,2,3,4,5];
+        n=m.slice(1,4);
+        console.log(n);
+        i=m.slice(-3);
+        console.log(i)
+        
+        //pop
+        let p=[1,2,3,4,5];
+        p.pop();
+        console.log(p);
+        p.push(5);
+        console.log(p);
+        p.shift();
+        console.log(p);
+        p.unshift(1);
+        console.log(p);
+
+        //sort and reverse
+        let l=[2,5,1,8,3];
+        l.sort();
+        console.log(l);
+        l.reverse();
+        console.log(l);
+
+        let num=[2,3,4,5];
+        console.log(num.join('-'));
+
+
+       let ar=["a", "b", "c" ,"d","e","f", ["g", ["h","i"]]];
+       nr= ar.flat(3);
+       console.log(nr);
+
+       let flowers=['lilly','marigold','rose','rose','tulip'];
+       console.log(flowers.indexOf('rose'));
+       console.log(flowers.lastIndexOf('rose'));
+       console.log(flowers.includes('rose'));
+       console.log(flowers.includes('jasmine'));
+
+
+
+    </script>
+</body>
+</html>
