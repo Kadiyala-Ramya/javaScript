@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //hoisting is a behaviour in javascript where variables and functions declarations are moved to the top
+
+        console.log(a);
+        var a=12;             //undefined
+
+        console.log(b);
+        let b=13;             //Reference error:cannot access b
+
+        console.log(c);
+        const c=14;          //Reference error:cannot access c
+
+        hello();
+        function hello(){
+            console.log("hello world");     //hello world
+         }
+
+        d();
+        var d=function(){
+             console.log("hai")             //d is not a function
+        }
+
+        e();
+        const e = () => console.log("bye");    //type error
+    </script>
+</body>
+</html>
