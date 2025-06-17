@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  id="btn1" placeholder="enter first number">
+    <input type="number"  id="btn2" placeholder="enter second number">
+    <button id="btn3">Add</button>
+    <br><br>
+    <h4>Result:<span id="res">0</span></h4>
+    <button id="btn">Click me</button>
+    <input type="text" id="myinput" placeholder="type something...">
+    <script>
+        document.getElementById("btn3").addEventListener("click",function(){
+             let a=parseInt(document.getElementById("btn1").value);
+             let b=parseInt(document.getElementById("btn2").value);
+             let sum = a + b;
+             document.getElementById("res").textContent= sum;
+        });
+
+    
+        //click: when an event is clicked
+             document.getElementById("btn").addEventListener("click",function(){
+             alert("button clicked");
+         });
+
+        //dbclick: when an event is double clicked
+             document.getElementById("btn").addEventListener("dblclick",function(){
+             console.log("hello world");
+         });
+        
+         //mousedown: when the mouse is pressed down
+         document.getElementById("btn").addEventListener("mousedown",function(){
+            alert("mouse button pressed down");
+         });
+
+        //mouseup: when the mouse button is released
+        document.getElementById("btn").addEventListener("mouseup",function(){
+            alert("mouse button released");
+        });
+
+        //mousemove: when the mouse move over an element
+        document.getElementById("btn").addEventListener("mouseover",function(){
+            alert("mouse is moving over the button");
+        });
+
+        //mouseleave: when the mouse leaves an element
+        document.getElementById("btn").addEventListener("mouseleave",function(){
+            alert("mouse left the button");
+        });
+
+        //keydown: triggered when the key is pressed
+        document.getElementById("myinput").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            alert("You pressed Enter!");
+        }
+        });
+        //keyup: triggered when the key is released
+        document.getElementById("myinput").addEventListener("keyup", function(event) {
+        if (event.key === "Shift") {
+            alert("key up");
+        }
+        });
+
+    </script>
+</body>
+</html> 
