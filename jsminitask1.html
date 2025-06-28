@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(#23a6d5,#23d5ab);
+            height:100vh;
+        }
+        .header{
+            color:white;
+            font-size: 32px;
+            margin-top:150px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .wrapper{
+            width:500px;
+            margin:0 auto;
+            position:relative;
+        }
+        .container{
+            background-color: rgba(255,255,255,0.3);
+            padding:30px;
+            border-radius: 8px;
+        }
+        textarea{
+            width:100%;
+            resize: none;
+            border:3px solid #23a6d5;
+            color:black;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.8);
+        }
+        .count{
+            color:white;
+            width:60%;
+            padding:30px;
+            border-radius: 5px;
+            text-align: center;
+            display:flex;
+            justify-content: space-around;
+            background-color: black;
+            position:absolute;
+            bottom:-30px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .count h4{
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Word & Character Counter
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <textarea rows="20" id="text-content"></textarea>
+        </div>
+        <div class="count">
+            <div>
+                <h4 id="word-count">0</h4>
+                <p>Words</p>
+            </div>
+            <div>
+                <h4 id="char-count">0</h4>
+                <p>Characters</p>
+            </div>
+        </div>
+    </div>
+    <script>
+           let textarea = document.getElementById('text-content');
+           let wordcount = document.getElementById('word-count');
+           let charcount = document.getElementById('char-count');
+           textarea.addEventListener('input', function () {
+                let text = textarea.value;
+                charcount.textContent = text.length;
+                let words = text.trim().split(/\s+/);  //text.trim().split(/\s+/)----splits the text into words by space, tab or newline.
+                wordcount.textContent = text.trim() === "" ? 0 : words.length;
+            });
+    </script>
+</body>
+</html>
